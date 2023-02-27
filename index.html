@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrutura DOM</title>
+    <style>
+        body {
+            background-color: rgb(85, 97, 204);
+            color: white;
+            font: normal 18px Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Estrutura DOM - Document Object Model</h1>
+    <p>Modelo do objeto (Documento)</p>
+    <p>Aprendendo a usar o <strong>DOM</strong> em JS</p>
+    <div id="mensagem">Interação</div>
+    <script>
+        //window.alert('Olá')//aparece no topo da janela
+        //window.document.write ('Olá') //aparece no documento
+        window.document.write ('Olá<br/>')
+        window.document.write(window.document.charset+ '<br/>') //mostra o Utf 8 que está lá no topo
+        
+        //Selecionando elementos
+        var corpo = window.document.body 
+        corpo.style.backgroundColor = 'black' //vai mudar o body inteiro, não precisa voltar para o Css lá no topo
+
+        var p1 = window.document.getElementsByTagName('p') [0] //todos os elementos p que tem no documento e o colchete define a posição desse elemento
+        p1.style.color = 'blue'
+        window.document.write(p1.innerText+ '<br/>') //escreve na tela o texto ecito dentro do elemento p1
+        window.document.write(p1.innerHTML)
+
+        var dv = window.document.getElementById('mensagem') //pega o id lá da div e transforma em var
+        dv.style.background = 'green' //muda a cor de fundo dessa div através da id acima
+        dv.innerText = 'Mudando o texto da div' //var torna possível mudar o que há no elemento
+
+        //document.getElementById('mensagem').innerText = 'Mudei o texto dnv kkkkk' //outra forma de fazer a linha acima
+       // document.getElementById('mensagem').style.background = 'green' //outra forma de colocar o fundo do elelemnto em verde
+
+       var d = window.document.querySelector('div#mensagem') //seletor sintaxe css
+        d.style.color = 'blue'
+        
+        
+        
+    </script>
+</body>
+</html>
